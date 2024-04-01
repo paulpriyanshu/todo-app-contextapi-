@@ -13,7 +13,7 @@ function App() {
     settodos((prev)=>[{id:Date.now(),...data},...prev])
   }
   const updatetodo=(id,data)=>{
-    settodos((prev)=>prev.map( data =>(data.id)===id? data:prev))
+    settodos((prev)=>prev.map( prevTodo =>(prevTodo.id)===id? data:prevTodo))
   } 
   const deletetodo=(id)=>{
     settodos(prev=>(prev.filter((prev)=>prev.id!==id)))
