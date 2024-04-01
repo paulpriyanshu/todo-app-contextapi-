@@ -3,7 +3,7 @@ import { useTodo } from '../context';
 
 export default function TodoItems({todo}) {
     const [isTodoEditable,setIsTodoEditable]=useState(false)
-    const [todoMsg,setTodoMsg]=useState(todo.todo)
+    const [todoMsg,setTodoMsg]=useState(todo.title)
     const {updatetodo,deletetodo,togglecomplete}=useTodo()
 
     const editTodo=()=>{

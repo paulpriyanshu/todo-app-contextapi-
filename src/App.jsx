@@ -10,10 +10,13 @@ function App() {
   const [todos,settodos]=useState([])
 
   const addtodo=(data)=>{
+    console.log(data)
+    
     settodos((prev)=>[{id:Date.now(),...data},...prev])
+    console.log(todos)
   }
   const updatetodo=(id,data)=>{
-    settodos((prev)=>prev.map( prevTodo =>(prevTodo.id)===id? data:prevTodo))
+    settodos((prev)=>prev.map( prevTodo =>(prevTodo.id)===id?{...prevTodo,title:data}:prevTodo))
   } 
   const deletetodo=(id)=>{
     settodos(prev=>(prev.filter((prev)=>prev.id!==id)))
